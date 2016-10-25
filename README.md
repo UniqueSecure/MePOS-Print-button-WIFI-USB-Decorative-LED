@@ -2,7 +2,7 @@
 
 # MePOS Connect printing
 
-This is a sample code to quickly integrate the MePOS print feature to your application.
+This is a sample code to  integrate the MePOS print feature to your application with touch of visual interaction by manipulating while printing the decorative LEDs. On this example we are showing the printing action with a red colour and a completed print action with a green colour.
 
 ## Getting Started
 
