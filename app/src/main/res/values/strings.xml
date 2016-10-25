@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MePOS Print Button Led</string>
+    <string name="print_started">A printer job has started.</string>
+    <string name="print_completed">Printer job has completed successfully.</string>
+    <string name="print_error">Error on printer job.</string>
+    <string name="printing_title">Printing with cosmetic LED colors</string>
+    <string name="print">Print</string>
+    <string name="printing_message">A printer job has sent to the queue</string>
+    <string name="ip_address">IP address</string>
+    <string name="print_wifi">Print wifi</string>
+    <string name="wifi">Wifi selected</string>
+</resources>

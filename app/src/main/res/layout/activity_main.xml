@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="io.mepos.meposprintbuttonled.MainActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        style="@style/MainStyle"
+        android:layout_marginTop="200dp"
+        android:text="@string/printing_title"
+        android:textSize="25sp" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/btnPrintLED"
+        style="@style/BtnStyle"
+        android:text="@string/print"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+
+    <EditText
+        android:id="@+id/ipText"
+        style="@style/MainStyle"
+        android:ems="10"
+        android:hint="@string/ip_address"
+        android:inputType="text" />
+
+    <CheckBox
+        android:id="@+id/printWifiBox"
+        style="@style/MainStyle"
+        android:text="@string/print_wifi" />
+
+</LinearLayout>
