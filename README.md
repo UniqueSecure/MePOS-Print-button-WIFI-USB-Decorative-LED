@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 
-* Go to [Mepos.io](http://mepos.io/developers) and register as developer. There you will find the lastest SDK file for your project.
+* Go to [Mepos.io](http://mepos.io/developers) and register as developer. There you will find the latest SDK file for your project.
 
 ## Installing
 
