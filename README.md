@@ -15,6 +15,35 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
+There are 2 ways to install the SDK into your projec: 
+
+1.- Gradle interation
+
+You can integrate the MePOS connect library using gradle, adding the following configuration to your
+build.gradle file:
+
+```
+repositories {
+ maven { url "http://connect.mepos.io/artifactory/libs-release-local" }
+}
+```
+
+```
+dependencies {
+ compile 'com.uniquesecure:meposconnect:1.10:@aar'
+ }
+```
+
+2.- Manual integration
+
+* Create a new Module in your Android project and select the option: *Import an existing JAR or AAR package*.
+* Define the path of your .aar file and the name of the submodule. In this case the module name is *MePOSConnectLib*
+* Add your module to your gradle build file:
+
+```
+compile project(':MePOSConnectLib')
+```
+
 * Prepare you manifest.xml file (necessary for wifi-printing) and include the following line:
 ```
 <uses-permission android:name="android.permission.INTERNET" />
