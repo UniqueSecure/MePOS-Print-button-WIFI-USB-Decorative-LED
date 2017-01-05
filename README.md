@@ -13,6 +13,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Go to [Mepos.io](http://mepos.io/developers) and register as developer. There you will find the latest SDK file for your project.
 
+## Register
+
+Go to [mepos.io](http://mepos.io/) and register as developer.
+
 ## Installing
 
 ### Add the SDK to your project
@@ -21,7 +25,7 @@ There are two options:
 
 ***1 Manual***
 
-- Download the .aar file from [here](https://github.com/UniqueSecure/MePOSAndroidSDK/tree/master/aars)
+- Download the .aar
 - On your project create a new module (Import AAR Package)
 - Go to project structure
 - Add a app module dependencies on the library
