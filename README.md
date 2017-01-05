@@ -11,13 +11,13 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 
-* Go to [Mepos.io](http://mepos.io/developers) and register as developer. There you will find the last SDK file for your project.
+* Go to [Mepos.io](http://mepos.io/developers) and register as developer. There you will find the lastest SDK file for your project.
 
 ### Installing
 
 There are 2 ways to install the SDK into your projec: 
 
-1.- Gradle interation
+1.- Gradle integration
 
 You can integrate the MePOS connect library using gradle, adding the following configuration to your
 build.gradle file:
