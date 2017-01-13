@@ -55,7 +55,7 @@ android.hardware.usb.action.USB_DEVICE_DETACHED
 ```
 
 ## Running the tests
-
+~~~
 1. Create MePOS receipt.
 ```
 public class ReceiptBuilder {
@@ -71,9 +71,8 @@ public class ReceiptBuilder {
     }
 }
 ```
-
 2. In order to control the UI messages and set the Cosmetic LED colors during the printing cycle, implement MePOSPrinterCallback on your printing activity and its methods.
-
+~~~
 ```
 @Override
    public void onPrinterStarted(MePOSConnectionType mePOSConnectionType, String s) {
@@ -91,7 +90,6 @@ public class ReceiptBuilder {
    }   
    
 ```
-
 ###### Note.- You can select from seven diferent colors.
 * MePOSColorCodes.COSMETIC_GREEN
 * MePOSColorCodes.COSMETIC_BLUE
@@ -102,6 +100,7 @@ public class ReceiptBuilder {
 * MePOSColorCodes.COSMETIC_WHITE
 * MePOSColorCodes.COSMETIC_OFF
 
+~~~
 3. Creating a USB MePOS instance.
 ```
 MePOS mePOS = new MePOS(context, MePOSConnectionType.USB);
@@ -116,7 +115,7 @@ mePOS.print(receipt);
 MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
 mePOS.getConnectionManager().setConnectionIPAddress("192.168.1.64");
 ```
-
+~~~
 
 ### About the test
 
