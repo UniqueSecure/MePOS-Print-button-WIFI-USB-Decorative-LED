@@ -30,7 +30,7 @@ public class MainActivity extends MePOSAbstractActivity {
         mBtnPrintLED.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MePOSReceipt receipt = new ReceiptBuilder().getShortReceipt();
+                MePOSReceipt receipt = new ReceiptBuilder(MainActivity.this).getShortReceipt();
                 MePOSSingleton.getInstance().print(receipt, MainActivity.this);
                 Toast.makeText(MainActivity.this, R.string.printing_message, Toast.LENGTH_SHORT).show();
             }
