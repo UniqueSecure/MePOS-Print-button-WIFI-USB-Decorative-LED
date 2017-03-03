@@ -19,6 +19,10 @@ android {
     }
 }
 
+repositories {
+    maven { url "http://connect.mepos.io/artifactory/libs-release-local" }
+}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -26,6 +30,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
+    compile 'com.uniquesecure:meposconnect:1.15:@aar'
     testCompile 'junit:junit:4.12'
-    compile project(':MePOSConnectLib')
 }
