@@ -128,4 +128,4 @@ The code on this repository is an example from the SDK and for MePOS developers 
 
 ## Contact
 
-Please rise a ticket here MePOS support: https://mepos.zendesk.com/hc/en-us/requests/new
+Please rise a ticket [here](https://mepos.zendesk.com/hc/en-us/requests/new) MePOS support.
