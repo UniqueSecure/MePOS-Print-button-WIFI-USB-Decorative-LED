@@ -39,7 +39,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.10:@aar'
+ compile 'com.uniquesecure:meposconnect:1.15:@aar'
 }
 ```
 
@@ -128,4 +128,4 @@ The code on this repository is an example from the SDK and for MePOS developers 
 
 ## Contact
 
-Please send us an email: us.unique.secure@gmail.com
+Please rise a ticket [here](https://mepos.zendesk.com/hc/en-us/requests/new) MePOS support.
