@@ -26,6 +26,7 @@ public class MainActivity extends MePOSAbstractActivity {
         mIpText = (EditText) findViewById(R.id.ipText);
         mPrintWifiBox = (CheckBox) findViewById(R.id.printWifiBox);
 
+        findMePOSUSB();
 
         mBtnPrintLED.setOnClickListener(new View.OnClickListener() {
             @Override

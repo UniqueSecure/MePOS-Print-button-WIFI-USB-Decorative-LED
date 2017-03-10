@@ -1,53 +1,31 @@
 package io.mepos.meposprintbuttonled;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
+import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 import com.uniquesecure.meposconnect.MePOSColorCodes;
 import com.uniquesecure.meposconnect.MePOSConnectionType;
 import com.uniquesecure.meposconnect.MePOSException;
 import com.uniquesecure.meposconnect.MePOSPrinterCallback;
 
+import java.util.HashMap;
+
 import persistence.MePOSSingleton;
 
 public abstract class MePOSAbstractActivity extends AppCompatActivity implements MePOSPrinterCallback {
     CheckBox mCheckbox;
 
+    public static final int MEPOS_VENDOR_ID = 11406;
+    public static final int MEPOS_PRODUCT_ID = 9220;
 
     private static final String TAG = MePOSAbstractActivity.class.getSimpleName();
 
-    protected BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (UsbManager.ACTION_USB_DEVICE_ATTACHED.equals(action)) {
-                mCheckbox = (CheckBox) findViewById(R.id.printWifiBox);
-                mCheckbox.setChecked(false);
-                MePOSSingleton.createInstance(getApplicationContext(), MePOSConnectionType.USB);
-                Toast.makeText(context, "MePOS  connected", Toast.LENGTH_SHORT).show();
-            } else if (UsbManager.ACTION_USB_DEVICE_DETACHED.equals(action)) {
-                try {
-                    Toast.makeText(context, "MePOS disconnected", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    Log.e("USB", e.getMessage());
-                }
-            } else {
-                Toast.makeText(context, "MePOS disconnected", Toast.LENGTH_SHORT).show();
-                getApplicationContext().unregisterReceiver(mReceiver);
-
-            }
-        }
-    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,20 +41,11 @@ public abstract class MePOSAbstractActivity extends AppCompatActivity implements
     @Override
     protected void onResume() {
         super.onResume();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.hardware.usb.action.USB_DEVICE_ATTACHED");
-        intentFilter.addAction("android.hardware.usb.action.USB_DEVICE_DETACHED");
-        registerReceiver(this.mReceiver, intentFilter);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        try {
-            unregisterReceiver(mReceiver);
-        } catch (Exception e) {
-            Log.e(TAG, e.getMessage(), e);
-        }
     }
 
     @Override
@@ -112,6 +81,23 @@ public abstract class MePOSAbstractActivity extends AppCompatActivity implements
     @Override
     public void onPrinterError(MePOSException e) {
         Snackbar.make(findViewById(android.R.id.content), R.string.print_error, Snackbar.LENGTH_SHORT).show();
+    }
+
+    protected boolean isAMePOS(UsbDevice device) {
+        return device.getVendorId() == MEPOS_VENDOR_ID &&
+                device.getProductId() == MEPOS_PRODUCT_ID;
+    }
+
+    protected void findMePOSUSB() {
+        UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
+
+        HashMap<String, UsbDevice> deviceList = manager.getDeviceList();
+        for (UsbDevice device : deviceList.values()) {
+            if (isAMePOS(device)) {
+                MePOSSingleton.createInstance(getApplicationContext(), MePOSConnectionType.USB);
+                MePOSSingleton.lastStateUsbAttached = true;
+            }
+        }
     }
 
 }
