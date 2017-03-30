@@ -39,7 +39,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.15:@aar'
+ compile 'com.uniquesecure:meposconnect:1.16:@aar'
 }
 ```
 
@@ -88,7 +88,7 @@ public class ReceiptBuilder {
    public void onPrinterError(MePOSException e) {
        // some message
    }   
-   
+
 ```
 ###### Note.- You can select from seven diferent colors.
 * MePOSColorCodes.COSMETIC_GREEN
