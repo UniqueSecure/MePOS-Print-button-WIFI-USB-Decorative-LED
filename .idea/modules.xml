@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MePOS-Print-button-WIFI-USB-Decorative-LED.iml" filepath="$PROJECT_DIR$/MePOS-Print-button-WIFI-USB-Decorative-LED.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MePOS-Print-button-WIFI-USB-Decorative-LED.iml" filepath="$PROJECT_DIR$/.idea/MePOS-Print-button-WIFI-USB-Decorative-LED.iml" />
       <module fileurl="file://$PROJECT_DIR$/MePOS-Print-button-WIFI-USB-Decorative-LED.iml" filepath="$PROJECT_DIR$/MePOS-Print-button-WIFI-USB-Decorative-LED.iml" />
       <module fileurl="file://$PROJECT_DIR$/MePOSConnectLib/MePOSConnectLib.iml" filepath="$PROJECT_DIR$/MePOSConnectLib/MePOSConnectLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/MePOSConnectLib/MePOSConnectLib.iml" filepath="$PROJECT_DIR$/MePOSConnectLib/MePOSConnectLib.iml" />
